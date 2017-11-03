@@ -1,0 +1,61 @@
+2017-10-26 12:43:55,890 WARN o.h.o.c.pooling [http-nio-8080-exec-2] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:24:58,668 ERROR o.h.h.i.a.ErrorCounter [http-nio-8080-exec-5] line 1:92: unexpected token: password
+2017-10-27 16:24:58,668 ERROR o.h.h.i.a.ErrorCounter [http-nio-8080-exec-5] line 1:92: unexpected token: password
+antlr.NoViableAltException: unexpected token: password
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:784) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:546) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:655) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:23) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at dao.ClientManager.loadClientByLogin(ClientManager.java:57) [classes/:?]
+	at servlet.Login.doPost(Login.java:55) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.1]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.1]
+	at filter.ConnectionFilter.doFilter(ConnectionFilter.java:35) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.1]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.1]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [catalina.jar:9.0.1]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.1]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.1]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.1]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:500) [tomcat-coyote.jar:9.0.1]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.1]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:754) [tomcat-coyote.jar:9.0.1]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1376) [tomcat-coyote.jar:9.0.1]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.1]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.1]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_144]
+2017-10-27 16:26:23,692 WARN o.h.o.c.pooling [http-nio-8080-exec-4] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:26:26,643 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] SQL Error: 1054, SQLState: 42S22
+2017-10-27 16:26:26,643 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] Unknown column 'lkientzel' in 'where clause'
+2017-10-27 16:27:10,737 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-7] SQL Error: 1054, SQLState: 42S22
+2017-10-27 16:27:10,738 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-7] Unknown column 'lkientzel' in 'where clause'
+2017-10-27 16:34:58,487 WARN o.h.o.c.pooling [http-nio-8080-exec-3] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:35:01,750 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] SQL Error: 1054, SQLState: 42S22
+2017-10-27 16:35:01,750 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] Unknown column 'lkienyzel' in 'where clause'
+2017-10-27 16:51:05,476 WARN o.h.o.c.pooling [http-nio-8080-exec-4] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:52:29,823 WARN o.h.o.c.pooling [http-nio-8080-exec-3] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:52:59,201 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] SQL Error: 1054, SQLState: 42S22
+2017-10-27 16:52:59,206 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] Unknown column 'lkientzel' in 'where clause'
+2017-10-27 16:55:40,484 WARN o.h.o.c.pooling [http-nio-8080-exec-2] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:57:11,536 WARN o.h.o.c.pooling [http-nio-8080-exec-2] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 16:59:34,344 WARN o.h.o.c.pooling [http-nio-8080-exec-6] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-10-27 17:10:15,893 WARN o.h.o.c.pooling [http-nio-8080-exec-4] HHH10001002: Using Hibernate built-in connection pool (not for production use!)

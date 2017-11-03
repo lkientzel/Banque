@@ -1,14 +1,37 @@
 package Model;
 
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
 public class Client {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idClient;
 	private String nom;
 	private String prenom;
-	private int idClient;
 	private String password;
 	private String login;
 	
+	@OneToMany(mappedBy = "client", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<Compte> lesComptes;
+	
+	public List<Compte> getLesComptes() {
+		return lesComptes;
+	}
+
+	public void setLesComptes(List<Compte> lesComptes) {
+		this.lesComptes = lesComptes;
+	}
+
 	public String toString() {
 		return idClient + " " + nom + " " + prenom + " " + login;
+	}
+	
+	public String toJSON() {
+		return "{" + idClient + ";" + nom + ";" + prenom + ";" + login + ";" + password +"}";
 	}
 	
 	public String getNom() {
